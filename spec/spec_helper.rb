@@ -1,3 +1,5 @@
+require './lib/slack_user'
+
 RSpec.configure do |config|
   config.order = :random
 
