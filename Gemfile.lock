@@ -65,9 +65,14 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     slop (3.6.0)
+    tomparse (0.4.2)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    yard (0.9.5)
+    yard-tomdoc (0.7.1)
+      tomparse (>= 0.4.0)
+      yard
 
 PLATFORMS
   ruby
@@ -77,6 +82,8 @@ DEPENDENCIES
   httparty
   pry-meta
   rspec
+  yard
+  yard-tomdoc
 
 BUNDLED WITH
    1.12.5
