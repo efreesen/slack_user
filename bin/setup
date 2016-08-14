@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo "Setting up your environment..."
+echo ""
+
+if ! bundle -v &>/dev/null; then
+  echo "Installing bundler..."
+  echo ""
+  gem install bundler
+  echo ""
+fi
+
+bundle install
+
+echo ""
+echo "Environment set, you are ready to go!"
