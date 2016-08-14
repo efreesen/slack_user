@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+echo "Installing dependencies..."
+echo ""
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+bundle install
+
+echo ""
+echo "Dependencies installed successfuly"

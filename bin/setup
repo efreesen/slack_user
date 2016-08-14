@@ -2,14 +2,21 @@
 echo "Setting up your environment..."
 echo ""
 
+set -e
+
+cd "$(dirname "$0")/.."
+
 if ! bundle -v &>/dev/null; then
   echo "Installing bundler..."
   echo ""
   gem install bundler
   echo ""
+else
+  echo "Bundler installed"
+  echo ""
 fi
 
-bundle install
+bin/bootstrap
 
 echo ""
 echo "Environment set, you are ready to go!"
