@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require './lib/slack_user'
+
+unless ENV['SLACK_URL'] && ENV['SLACK_TOKEN']
+  message = 'ERROR: In order to run this app you must set the \'SLACK_URL\''
+  message += ' and \'SLACK_TOKEN\' Environment Variables!'
+
+  puts "\e[31m#{message}\e[0m"
+  puts ''
+
+  exit 1
+end
+
+adapter = Slack::Adapter.start
