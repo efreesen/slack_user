@@ -10,15 +10,16 @@ module Slack
     # corresponding Environment Variables.
     #
     def initialize
-      @channel_url = ENV['SLACK_URL'] || 'https://efreesen.slack.com'.freeze
-      @token = ENV['SLACK_TOKEN'] || "xoxb-69207542418-QyIlDLz8iNdwXKtMykvx6Db7".freeze
+      @channel_url = ENV['SLACK_URL']
+      @token = ENV['SLACK_TOKEN']
     end
 
     # Public: Tries to authenticate the Slack User based on the data from
     # the Environment Variables.
     #
     # Returns an [Slack::Authenticator] instance with the result from the
-    # authentication attempt.
+    #   authentication attempt.
+    #
     def self.authenticate
       new.authenticate
     end
@@ -28,6 +29,7 @@ module Slack
     #
     # Returns an [Slack::Authenticator] instance with the result from the
     #   authentication attempt.
+    #
     def authenticate
       response
 
@@ -39,6 +41,7 @@ module Slack
     #
     # Returns a [String] if the authentication is succesful or [Nil]
     #   otherwise.
+    #
     def bot_id
       success? ? body['self']['id'] : nil
     end
@@ -46,6 +49,7 @@ module Slack
     # Public: Gets the error returned from the authentication request.
     #
     # Returns a [String] containing the error from the authentication attempt.
+    #
     def error
       body['error']
     end
@@ -53,6 +57,7 @@ module Slack
     # Public: Gets the WebSocket URL returned on the authentication request.
     #
     # Returns a [String] containing the WebSocket URL.
+    #
     def ws_url
       body['url']
     end
@@ -60,6 +65,7 @@ module Slack
     # Public: Signals the status of the authentication attempt.
     #
     # Returns [True] if the authentication is successful or [False] otherwise.
+    #
     def success?
       body['ok']
     end

@@ -1,6 +1,11 @@
 describe Slack::Authenticator do
   let(:instance) { described_class.new }
 
+  before do
+    ENV['SLACK_URL'] = 'https://channel.slack.com'
+    ENV['SLACK_TOKEN'] = 'xoxb-69207542418-QyIlDLz8iNdwXKtMykvx6Db7'
+  end
+
   describe '#authenticate' do
     subject { instance.authenticate }
 
@@ -9,7 +14,7 @@ describe Slack::Authenticator do
     end
 
     it 'makes a request to Slack Channel' do
-      url = "https://efreesen.slack.com/api/rtm.start?token=xoxb-69207542418-QyIlDLz8iNdwXKtMykvx6Db7"
+      url = "https://channel.slack.com/api/rtm.start?token=xoxb-69207542418-QyIlDLz8iNdwXKtMykvx6Db7"
       
       expect(HTTParty).to receive(:get).with(url)
 
