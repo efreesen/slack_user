@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'httparty'
 gem 'faye'
+gem 'rdoc'
 
 group :development do
   gem 'yard-tomdoc'

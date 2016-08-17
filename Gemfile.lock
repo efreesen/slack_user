@@ -51,6 +51,8 @@ GEM
       pry (~> 0.9)
       slop (~> 3.0)
     rack (2.0.1)
+    rdoc (4.2.2)
+      json (~> 1.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -81,6 +83,7 @@ DEPENDENCIES
   faye
   httparty
   pry-meta
+  rdoc
   rspec
   yard
   yard-tomdoc
